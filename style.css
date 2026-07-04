@@ -109,7 +109,6 @@ main {
 
 .card-coming-soon .card-image {
   background: repeating-linear-gradient(45deg, #ffd6e8, #ffd6e8 11px, #ffe9f2 11px, #ffe9f2 22px);
-  filter: blur(1.5px);
 }
 
 .coming-soon-body {
