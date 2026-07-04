@@ -7,27 +7,32 @@ const items = [
   {
     name: 'Vanilla Bean Cupcakes', cat: 'Cupcakes', price: '$18 / 6', label: 'CUPCAKES',
     desc: 'Fluffy vanilla bean cupcakes crowned with tall swirls of raspberry frosting and a shower of rainbow sprinkles. Sold by the half-dozen.',
-    ingredients: ['Vanilla bean', 'Cake flour', 'Raspberry frosting', 'Sprinkles']
+    ingredients: ['Vanilla bean', 'Cake flour', 'Raspberry frosting', 'Sprinkles'],
+    comingSoon: true
   },
   {
     name: 'Rosewater Macarons', cat: 'Macarons', price: '$16 / 12', label: 'MACARONS',
     desc: 'Delicate almond shells sandwiching a silky rosewater ganache — light, chewy, and just sweet enough. A box of twelve, all blush.',
-    ingredients: ['Almond flour', 'Egg whites', 'Rosewater', 'White chocolate']
+    ingredients: ['Almond flour', 'Egg whites', 'Rosewater', 'White chocolate'],
+    comingSoon: true
   },
   {
     name: 'Butter Croissants', cat: 'Pastries', price: '$4 each', label: 'CROISSANTS',
     desc: 'Golden, flaky layers of French butter folded by hand and baked until shatteringly crisp. Best warm, straight from the morning batch.',
-    ingredients: ['French butter', 'Bread flour', 'Sea salt', 'A little patience']
+    ingredients: ['French butter', 'Bread flour', 'Sea salt', 'A little patience'],
+    comingSoon: true
   },
   {
     name: 'Funfetti Sugar Cookies', cat: 'Cookies', price: '$12 / 6', label: 'COOKIES',
     desc: 'Soft-baked sugar cookies loaded with confetti sprinkles and finished with a swoosh of pink royal icing. Chewy in the middle, always.',
-    ingredients: ['Butter', 'Sugar', 'Sprinkles', 'Royal icing']
+    ingredients: ['Butter', 'Sugar', 'Sprinkles', 'Royal icing'],
+    comingSoon: true
   },
   {
     name: 'Honey Milk Bread', cat: 'Breads', price: '$9', label: 'MILK BREAD',
     desc: 'Cloud-soft Japanese milk bread with a whisper of honey — pillowy enough to tear by hand, perfect toasted with a little butter.',
-    ingredients: ['Bread flour', 'Whole milk', 'Honey', 'Butter']
+    ingredients: ['Bread flour', 'Whole milk', 'Honey', 'Butter'],
+    comingSoon: true
   }
 ];
 
@@ -67,7 +72,10 @@ function renderGrid() {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-      <div class="card-image"><span>${item.label}</span></div>
+      <div class="card-image">
+        <span>${item.label}</span>
+        ${item.comingSoon ? '<span class="coming-soon-badge">Coming Soon</span>' : ''}
+      </div>
       <div class="card-body">
         <div class="card-name">${item.name}</div>
         <div class="card-meta">
@@ -83,13 +91,27 @@ function renderGrid() {
 
 function openItem(idx) {
   const item = items[idx];
-  document.getElementById('detail-image').innerHTML = `<span>${item.label}</span>`;
+  document.getElementById('detail-image').innerHTML = `
+    <span>${item.label}</span>
+    ${item.comingSoon ? '<span class="coming-soon-badge">Coming Soon</span>' : ''}
+  `;
   document.getElementById('detail-cat').textContent = item.cat;
   document.getElementById('detail-name').textContent = item.name;
   document.getElementById('detail-price').textContent = item.price;
   document.getElementById('detail-desc').textContent = item.desc;
   document.getElementById('detail-ingredients').innerHTML =
     item.ingredients.map(ing => `<span>${ing}</span>`).join('');
+
+  const orderBtn = document.querySelector('.order-btn');
+  if (item.comingSoon) {
+    orderBtn.textContent = 'Coming Soon';
+    orderBtn.disabled = true;
+    orderBtn.classList.add('order-btn-disabled');
+  } else {
+    orderBtn.textContent = 'Order this treat';
+    orderBtn.disabled = false;
+    orderBtn.classList.remove('order-btn-disabled');
+  }
 
   galleryView.hidden = true;
   detailView.hidden = false;

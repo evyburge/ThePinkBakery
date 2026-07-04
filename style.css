@@ -89,11 +89,27 @@ main {
 }
 
 .card-image {
+  position: relative;
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: repeating-linear-gradient(45deg, #ffc2dd, #ffc2dd 11px, #ffd9ea 11px, #ffd9ea 22px);
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: .4px;
+  color: #fff;
+  background: #d9629a;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.3);
 }
 
 .card-image span {
@@ -245,12 +261,20 @@ main {
 }
 
 .detail-image {
+  position: relative;
   height: 280px;
   border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: repeating-linear-gradient(45deg, #ffc2dd, #ffc2dd 14px, #ffd9ea 14px, #ffd9ea 28px);
+}
+
+.detail-image .coming-soon-badge {
+  top: 16px;
+  right: 16px;
+  font-size: 12px;
+  padding: 6px 14px;
 }
 
 .detail-image span {
@@ -335,4 +359,11 @@ main {
   border-radius: 999px;
   cursor: pointer;
   box-shadow: 0 12px 24px -8px rgba(224, 47, 128, .6);
+}
+
+.order-btn-disabled {
+  background: #e8c3d3;
+  box-shadow: none;
+  cursor: not-allowed;
+  color: #fff;
 }
