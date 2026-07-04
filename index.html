@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Pink Bakery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">The Pink Bakery</div>
+  <nav>
+    <a href="#gallery" class="active">Menu</a>
+    <a href="#about">About</a>
+    <a href="#custom" class="custom-link">Custom</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Gallery view -->
+  <section id="gallery-view">
+    <div class="hero">
+      <h1>Freshly baked,<br>extra sweet</h1>
+      <p>Handmade treats in every shade of pink.</p>
+    </div>
+
+    <div id="gallery" class="grid"></div>
+
+    <a href="#custom" id="custom" class="cta-banner">
+      <div class="cta-title">Dreaming of a custom cake?</div>
+      <div class="cta-sub">Tell us your idea — we'll make it pink.</div>
+    </a>
+
+    <section id="about" class="about">
+      <h2>About The Pink Bakery</h2>
+      <p>We're a small-batch bakery obsessed with two things: butter and pink. Everything on our menu is baked fresh daily in shades from bubblegum to blush, using real ingredients and no shortcuts.</p>
+    </section>
+  </section>
+
+  <!-- Detail view -->
+  <section id="detail-view" hidden>
+    <button id="back-btn" class="back-btn">← Back to menu</button>
+    <div id="detail-image" class="detail-image"></div>
+    <div id="detail-cat" class="detail-cat"></div>
+    <h2 id="detail-name" class="detail-name"></h2>
+    <div id="detail-price" class="detail-price"></div>
+    <p id="detail-desc" class="detail-desc"></p>
+    <div class="made-with-label">Made with</div>
+    <div id="detail-ingredients" class="ingredients"></div>
+    <button class="order-btn">Order this treat</button>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
