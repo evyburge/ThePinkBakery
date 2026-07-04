@@ -179,6 +179,53 @@ main {
   font-size: 15px;
 }
 
+.tipjar {
+  padding: 8px 0 30px;
+}
+
+.tipjar h2 {
+  font-family: 'Fredoka', sans-serif;
+  color: #4a2338;
+}
+
+.tipjar p {
+  color: #7a5266;
+  line-height: 1.6;
+  font-size: 15px;
+  max-width: 520px;
+}
+
+.tip-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.tip-btn {
+  border: none;
+  background: #ffe1ee;
+  color: #d9629a;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.tip-btn:hover {
+  background: linear-gradient(135deg, #ff7ab5, #ff4d97);
+  color: #fff;
+}
+
+.tip-btn-custom {
+  background: #fff;
+  border: 2px solid #ffb4d5;
+  color: #ff4d97;
+}
+
 /* Detail view */
 #detail-view {
   padding-top: 8px;

@@ -31,6 +31,31 @@ const items = [
   }
 ];
 
+// TODO: replace with your real Venmo link, e.g. "https://venmo.com/u/YourVenmoUsername"
+const VENMO_LINK = "https://venmo.com/u/YOUR_VENMO_USERNAME";
+
+function openVenmoTip(amount) {
+  const note = encodeURIComponent('Tip for The Pink Bakery');
+  const url = amount
+    ? `${VENMO_LINK}?txn=pay&amount=${amount}&note=${note}`
+    : VENMO_LINK;
+  window.open(url, '_blank');
+}
+
+document.querySelectorAll('.tip-btn[data-amount]').forEach(btn => {
+  btn.addEventListener('click', () => openVenmoTip(btn.dataset.amount));
+});
+
+const tipCustomBtn = document.getElementById('tip-custom');
+if (tipCustomBtn) {
+  tipCustomBtn.addEventListener('click', () => {
+    const amount = window.prompt('Enter a custom tip amount ($):');
+    if (amount && !isNaN(amount) && Number(amount) > 0) {
+      openVenmoTip(amount);
+    }
+  });
+}
+
 const galleryView = document.getElementById('gallery-view');
 const detailView = document.getElementById('detail-view');
 const grid = document.getElementById('gallery');
