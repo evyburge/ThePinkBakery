@@ -126,23 +126,29 @@ main {
 
 .tape-ribbon {
   position: absolute;
-  top: 42%;
-  left: -12%;
-  width: 124%;
-  transform: rotate(-8deg);
-  background: repeating-linear-gradient(45deg, #ff8fc0, #ff8fc0 12px, #fff0f6 12px, #fff0f6 24px);
-  border-top: 2px dashed #fff;
-  border-bottom: 2px dashed #fff;
-  color: #7a1f4d;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  top: 50%;
+  left: 50%;
+  width: 135%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  background: repeating-linear-gradient(45deg, #ffd400, #ffd400 14px, #1a1a1a 14px, #1a1a1a 28px);
+  border-top: 2px solid #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+  text-align: center;
+  padding: 9px 0;
+  box-shadow: 0 6px 14px -4px rgba(0, 0, 0, 0.45);
+}
+
+.tape-ribbon span {
+  display: inline-block;
+  background: #ffd400;
+  color: #1a1a1a;
   font-family: 'Fredoka', sans-serif;
   font-weight: 800;
   font-size: 13px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  text-align: center;
-  padding: 9px 0;
-  box-shadow: 0 6px 14px -4px rgba(0, 0, 0, 0.35);
+  padding: 3px 10px;
+  border-radius: 3px;
 }
 
 .card-image span {

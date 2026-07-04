@@ -74,11 +74,12 @@ function renderGrid() {
     if (item.comingSoon) {
       card.className = 'card card-coming-soon';
       card.innerHTML = `
-        <div class="card-image"></div>
+        <div class="card-image">
+          <div class="tape-ribbon"><span>Coming Soon!</span></div>
+        </div>
         <div class="card-body coming-soon-body">
           <div class="coming-soon-text">Coming soon!</div>
         </div>
-        <div class="tape-ribbon">Coming Soon!</div>
       `;
       grid.appendChild(card);
       return;
