@@ -70,12 +70,23 @@ function renderGrid() {
   grid.innerHTML = '';
   items.forEach((item, idx) => {
     const card = document.createElement('div');
+
+    if (item.comingSoon) {
+      card.className = 'card card-coming-soon';
+      card.innerHTML = `
+        <div class="card-image"></div>
+        <div class="card-body coming-soon-body">
+          <div class="coming-soon-text">Coming soon!</div>
+        </div>
+        <div class="tape-ribbon">Coming Soon!</div>
+      `;
+      grid.appendChild(card);
+      return;
+    }
+
     card.className = 'card';
     card.innerHTML = `
-      <div class="card-image">
-        <span>${item.label}</span>
-        ${item.comingSoon ? '<span class="coming-soon-badge">Coming Soon</span>' : ''}
-      </div>
+      <div class="card-image"><span>${item.label}</span></div>
       <div class="card-body">
         <div class="card-name">${item.name}</div>
         <div class="card-meta">
@@ -91,27 +102,13 @@ function renderGrid() {
 
 function openItem(idx) {
   const item = items[idx];
-  document.getElementById('detail-image').innerHTML = `
-    <span>${item.label}</span>
-    ${item.comingSoon ? '<span class="coming-soon-badge">Coming Soon</span>' : ''}
-  `;
+  document.getElementById('detail-image').innerHTML = `<span>${item.label}</span>`;
   document.getElementById('detail-cat').textContent = item.cat;
   document.getElementById('detail-name').textContent = item.name;
   document.getElementById('detail-price').textContent = item.price;
   document.getElementById('detail-desc').textContent = item.desc;
   document.getElementById('detail-ingredients').innerHTML =
     item.ingredients.map(ing => `<span>${ing}</span>`).join('');
-
-  const orderBtn = document.querySelector('.order-btn');
-  if (item.comingSoon) {
-    orderBtn.textContent = 'Coming Soon';
-    orderBtn.disabled = true;
-    orderBtn.classList.add('order-btn-disabled');
-  } else {
-    orderBtn.textContent = 'Order this treat';
-    orderBtn.disabled = false;
-    orderBtn.classList.remove('order-btn-disabled');
-  }
 
   galleryView.hidden = true;
   detailView.hidden = false;
