@@ -1,8 +1,8 @@
 const items = [
   {
-    name: 'Strawberry Cloud Cake', cat: 'Cakes', price: '$42', label: 'STRAWBERRY CAKE',
-    desc: "A pillowy vanilla sponge layered with fresh strawberry cream and finished in a cloud of pink buttercream. Our signature bake — the one everyone photographs first.",
-    ingredients: ['Vanilla sponge', 'Fresh strawberries', 'Whipped cream', 'Pink buttercream']
+    name: 'Fluffy Buttery Cloud Bread', cat: 'Breads', price: '$8', label: 'CLOUD BREAD',
+    desc: "A dreamy, pillow-soft loaf that's kneaded slow and baked low until it turns golden and impossibly light — like tearing into a warm cloud. Bake time: 4 hours.",
+    ingredients: ['Yeast', 'Sugar', 'Milk', 'Flour', 'Salt', 'Softened butter']
   },
   {
     name: 'Vanilla Bean Cupcakes', cat: 'Cupcakes', price: '$18 / 6', label: 'CUPCAKES',
