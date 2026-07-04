@@ -227,10 +227,29 @@ main {
   color: #4a2338;
 }
 
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.about-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffd6e8;
+  box-shadow: 0 10px 24px -10px rgba(224, 47, 128, 0.45);
+  flex-shrink: 0;
+}
+
 .about p {
   color: #7a5266;
   line-height: 1.6;
   font-size: 15px;
+  flex: 1;
+  min-width: 240px;
 }
 
 .tipjar {
